@@ -1,14 +1,13 @@
 # Deploy Guide
 ## Step 1: Set virtual host
 Append following code to 'C:\xampp\apache\conf\extra\httpd-vhosts.conf', the path depends on your environment:
-```
-<VirtualHost *:80>
-    ServerAdmin sue.liusiqian@gmail.com
-    DocumentRoot "C:/xampp/htdocs/Lab8"
-    ServerName bookmanager.com
-    <Directory "C:/xampp/htdocs/Lab8">
-        DirectoryIndex pages/index.html
-    </Directory>
+```<VirtualHost *:80>
+   ServerAdmin liu00638@algonquinlive.com
+   DocumentRoot "C:/xampp/htdocs/assignment2"
+   ServerName bookmanager.com
+   <Directory "C:/xampp/htdocs/assignment2">
+       DirectoryIndex pages/index.html
+   </Directory>
 </VirtualHost>
 ```
 
