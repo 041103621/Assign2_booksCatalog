@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/bookdetail.css" />
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      id="commentModal"
+      tabindex="-1"
+      aria-labelledby="commentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="comment-text" class="col-form-label"
+                  >Comment:</label
+                >
+                <textarea
+                  class="form-control"
+                  style="height: 300px"
+                  id="comment-text"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="submit-comment" type="button" class="btn btn-primary">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: #e3f2fd"
+    >
+      <div class="container">
+        <a href="#" class="navbar-brand"
+          >Book Cataloging System, Welcome <span id="username"></span
+          ><span id="userid" style="display: none"></span
+        ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <div class="nav-link"><a href="/pages/home.html">Home</a></div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link">
+                <a href="/pages/bookshelf.html">Bookshelf</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link">
+                <a id="logout" href="#">Logout</a>
+              </div>
+            </li>
+            <!-- <li class="nav-item"><div class="nav-link">Profile</div></li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="p-1">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="card m-5" style="width: 60rem; border-color: white">
+          <div class="row g-0 p-4">
+            <div class="col-md-4">
+              <img id="book-img" class="img-fluid rounded-start" alt="img" />
+              <div class="star-rating">
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star-half-alt"></span>
+                <span id="book-score" class="rating-number"></span>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Title:<span id="book-title"></span></h5>
+                <span id="bookid" style="display: none"></span>
+                <span>Author:<span id="book-author"></span></span>
+                <br />
+                <span>Genre:<span id="book-genre"></span></span>
+                <br />
+                <span>Publish Date:<span id="book-publish-date"></span></span>
+                <br />
+                <span>ISBN:<span id="book-isbn"></span></span>
+                <br />
+                <br />
+                <h6>Description:</h6>
+                <p id="book-description" class="card-text"></p>
+                <a id="add-favourite" href="#" class="btn btn-outline-success">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-emoji-heart-eyes"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                    />
+                    <path
+                      d="M11.315 10.014a.5.5 0 0 1 .548.736A4.5 4.5 0 0 1 7.965 13a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242s1.46-.118 2.152-.242a27 27 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434m6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434"
+                    />
+                  </svg>
+                  Add to Bookshelf</a
+                >
+                <a
+                  id="add-comments"
+                  href="#"
+                  class="btn btn-outline-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#commentModal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat-text"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"
+                    />
+                    <path
+                      d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8m0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5"
+                    />
+                  </svg>
+                  Comment</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-1">
+      <div class="container" style="width: 60rem">
+        <h4 class="text-left">Comments</h4>
+        <div class="accordion accordion-flush" id="accordionFlush"></div>
+      </div>
+    </section>
+
+    <footer class="text-dark text-center">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2024 Siqian Liu</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/bookdetail.js"></script>
+  </body>
+</html>

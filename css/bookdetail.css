@@ -1,0 +1,26 @@
+.star-rating .fas {
+  color: #ffc107;
+}
+
+.star-rating .far {
+  color: #e4e5e9;
+}
+
+.star-rating .fas,
+.star-rating .far {
+  font-size: 1.5em;
+}
+
+.star-rating .rating-number {
+  font-size: 1.5em;
+  color: #333;
+  margin-left: 4px;
+}
+
+.col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1;
+}

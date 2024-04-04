@@ -1,0 +1,13 @@
+body::before {
+  display: block;
+  content: "";
+  height: 56px;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
