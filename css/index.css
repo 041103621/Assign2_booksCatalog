@@ -2,3 +2,7 @@ body {
     min-height:100vh;
     margin:0;
 }
+.errormessage {
+    color: red;
+    font-size:small;
+}
