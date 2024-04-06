@@ -16,6 +16,10 @@ Append following code to 'C:\Windows\System32\drivers\etc\hosts',
 ```
 127.0.0.1       bookmanager2024.com
 ```
+# Step 3: create database and insert test database
+find sql files in ./assignment2/db
+book.sql: create database
+books.sql: insert test data into table books
 
 ## Step 3 : Restart XAMPP's apache
 
