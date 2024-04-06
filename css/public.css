@@ -11,3 +11,7 @@ body::before {
 a {
   text-decoration: none;
 }
+
+.lead {
+  font-size:small;
+}
