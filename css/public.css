@@ -1,17 +1,21 @@
+/*Insert before contents of body element.*/
 body::before {
   display: block;
   content: "";
   height: 56px;
 }
 
+/* Assigns a 'pointer' cursor to indicate that an element with the class 'nav-link' is clickable. */
 .nav-link {
   cursor: pointer;
 }
 
+/* Removes the default text decoration from all <a> tags in the document. */
 a {
   text-decoration: none;
 }
 
+/*Set font size to small for 'lead' class*/
 .lead {
   font-size:small;
 }

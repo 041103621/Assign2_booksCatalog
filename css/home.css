@@ -1,8 +1,10 @@
 
+ /* Assigns a 'pointer' cursor to indicate that an element with the class 'favourite' inside a <tbody> within a <table> is clickable. */
 table tbody .favourite {
   cursor: pointer;
 }
 
+/* Removes the default text decoration from all <a> tags in the document. */
 a {
     text-decoration:none;
 }

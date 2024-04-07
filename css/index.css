@@ -1,7 +1,9 @@
+/*Set styles for body element in index page.*/
 body {
     min-height:100vh;
     margin:0;
 }
+/*Set styles for errormessage class in index page.*/
 .errormessage {
     color: red;
     font-size:small;

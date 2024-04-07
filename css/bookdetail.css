@@ -1,22 +1,26 @@
+/*Add color for fas class that's in star-rating class in bookdetail page.*/
 .star-rating .fas {
   color: #ffc107;
 }
-
+/*Add color for far class that's in star-rating class in bookdetail page.*/
 .star-rating .far {
   color: #e4e5e9;
 }
 
+/*Set font size for fas class and far class that are in star-rating class in bookdetail page.*/
 .star-rating .fas,
 .star-rating .far {
   font-size: 1.5em;
 }
 
+/*Set styles for rating-number class that's in star-rating class in bookdetail page.*/
 .star-rating .rating-number {
   font-size: 1.5em;
   color: #333;
   margin-left: 4px;
 }
 
+/*Set styles for col-md-4 class in bookdetail page.*/
 .col-md-4 {
   display: flex;
   flex-direction: column;
