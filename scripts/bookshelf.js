@@ -7,9 +7,13 @@ function flushBooks() {
   fetch("/server/index.php/api/get/userbooks")
     .then((res) => res.json())
     .then((resData) => {
+      //console.log(resData);
+      document.querySelector("#username").innerHTML = resData.username;
       const bookShelf = document.getElementById("bookshelf");
       bookShelf.innerHTML = "";
-      if(resData.rows===undefined) return;
+      if (!resData.rows || resData.rows.length === 0) {
+        // If resData.rows is undefined, null, or has length 0, display "No data found"
+        bookShelf.innerHTML = '<p id="nobookadd">No Book Added.</p>';}
       resData.rows.forEach((r) => {
         let template = `<div class="card m-5" style="width: 60rem; border-color: white">
           <div class="row g-0 p-4">

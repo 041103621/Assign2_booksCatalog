@@ -71,12 +71,7 @@ if ($apiSegment === 'api') {
                     $bookController->getAllBooks();
                 }
             } else if ($actionSegmentObject === 'userbooks') {
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
-
-                $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : -1;
-                $userbookController->getUserBooks($userid);
+                $userbookController->getUserBooks();
             } else if ($actionSegmentObject === 'bookcomment') {
                 $bookcommentController->getBookComments($actionSegmentObjectId);
             }

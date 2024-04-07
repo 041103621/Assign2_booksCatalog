@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Book Detail</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -115,18 +115,18 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Title:<span id="book-title"></span></h5>
+                <h5 class="card-title"><span id="book-title"></span></h5>
                 <span id="bookid" style="display: none"></span>
-                <span>Author:<span id="book-author"></span></span>
+                <span class="bookdetail_label">Author: </span><span id="book-author"></span>
                 <br />
-                <span>Genre:<span id="book-genre"></span></span>
+                <span class="bookdetail_label">Genre: </span><span id="book-genre"></span>
                 <br />
-                <span>Publish Date:<span id="book-publish-date"></span></span>
+                <span class="bookdetail_label">Publish Date: </span><span id="book-publish-date"></span>
                 <br />
-                <span>ISBN:<span id="book-isbn"></span></span>
+                <span class="bookdetail_label">ISBN: </span><span id="book-isbn"></span>
                 <br />
                 <br />
-                <h6>Description:</h6>
+                <h6 class="bookdetail_label">Description:</h6>
                 <p id="book-description" class="card-text"></p>
                 <!--Button to add book in shelf.-->
                 <a id="add-favourite" href="#" class="btn btn-outline-success">

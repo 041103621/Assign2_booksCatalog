@@ -18,10 +18,10 @@ Append following code to 'C:\Windows\System32\drivers\etc\hosts',
 ```
 # Step 3: create database and insert test database
 find sql files in ./assignment2/db
-book.sql: create database
-books.sql: insert test data into table books
+book_create.sql: create database
+books_insert.sql: insert test data into table books
 
-## Step 3 : Restart XAMPP's apache
+## Step 4 : Restart XAMPP's apache
 
 # User Guide
 

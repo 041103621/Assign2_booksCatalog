@@ -22,8 +22,14 @@ class UserBookController
         echo json_encode($response);
     }
 
-    public function getUserBooks($userid)
+    public function getUserBooks()
     {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : -1;
+
         $response = null;
         if ($userid === -1) {
             $response=['resCode' => 8, 'resMsg' => 'No login'];
