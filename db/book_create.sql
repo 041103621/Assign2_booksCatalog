@@ -2,9 +2,6 @@
 --CREATE DATABASE book;--
 
 CREATE DATABASE book;
-CREATE USER 'books'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL privileges ON book.* TO 'books'@'localhost';
-FLUSH privileges;
 
 USE book;
 --Create TABLES(users,books,bookscomments and userbooks)--

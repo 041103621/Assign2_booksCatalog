@@ -17,8 +17,9 @@ class UserBookService
         return $result;
     }
 
-    public function removeBookFromBookShelf($userid, $bookid){
-        $result=$this->userbookDAO->deleteByUserIdAndBookId($userid,$bookid);
+    public function removeBookFromBookShelf($userid, $bookid)
+    {
+        $result = $this->userbookDAO->deleteByUserIdAndBookId($userid, $bookid);
         return $result;
     }
 
@@ -32,13 +33,20 @@ class UserBookService
 
         $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : -1;
         $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
-        if ($result['resCode'] === 0) {
+        if ($result['resCode'] == 0) {
             return [
-                'resCode' => 0,
-                'resMsg' => 'success',
+                'resCode' => $result['resCode'],
+                'resMsg' => $result['resMsg'],
                 'userid' => $userid,
                 'username' => $username,
                 'rows' => $result['rows']
+            ];
+        } else {
+            return [
+                'resCode' => $result['resCode'],
+                'resMsg' => $result['resMsg'],
+                'userid' => $userid,
+                'username' => $username
             ];
         }
         return $result;
