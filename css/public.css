@@ -19,3 +19,8 @@ a {
 .lead {
   font-size:small;
 }
+
+#username {
+  color: #E56B6F;
+  font-weight: bold;
+}
