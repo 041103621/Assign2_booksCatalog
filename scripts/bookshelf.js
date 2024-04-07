@@ -32,16 +32,16 @@ function flushBooks() {
               <div class="card-body">
                 <h5 class="card-title">Title:<span id="book-title">${r.title}</span></h5>
                 <span id="bookid" style="display: none"></span>
-                <span>Author:<span id="book-author">${r.author}</span></span>
+                <span class="bookdetail_label">Author: </span><span id="book-author">${r.author}</span>
                 <br />
-                <span>Genre:<span id="book-genre">${r.genre}</span></span>
+                <span class="bookdetail_label">Genre: </span><span id="book-genre">${r.genre}</span>
                 <br />
-                <span>Publish Date:<span id="book-publish-date">${r.publish_date}</span></span>
+                <span class="bookdetail_label">Publish Date: </span><span id="book-publish-date">${r.publish_date}</span>
                 <br />
-                <span>ISBN:<span id="book-isbn">${r.isbn}</span></span>
+                <span class="bookdetail_label">ISBN: </span><span id="book-isbn">${r.isbn}</span>
                 <br />
                 <br />
-                <h6>Description:</h6>
+                <h6 class="bookdetail_label">Description:</h6>
                 <p id="book-description" class="card-text">${r.description}</p>
                 <a href="#" data-book-id=${r.bookid} data-user-id=${r.userid} class="add-favourite btn btn-outline-danger">
                     <svg
